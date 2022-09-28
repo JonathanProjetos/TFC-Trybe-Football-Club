@@ -1,13 +1,13 @@
-import jwt from 'jsonwebtoken';
+import { sign } from 'jsonwebtoken';
 import 'dotenv/config';
 // import ITokenInterface from '../interfaces/IToken';
 
-const { JWT_SECRET } = process.env;
+const JWT_SECRET = '123456';
 
 const jwtCheckUser = {
 
-  generateToken: (username:string, password: string) => {
-    const token = jwt.sign({ username, password }, JWT_SECRET, {
+  generateToken: (email:string, password: string) => {
+    const token = sign({ email, password }, JWT_SECRET, {
       expiresIn: '1d',
       algorithm: 'HS256',
     });

@@ -13,11 +13,33 @@ class User extends Model {
 
 User.init({
   // ... Campos
- id: INTEGER,   
- username: STRING,
- email: STRING,
- role: STRING,
- password: STRING,
+ id: {
+  type:INTEGER,
+  allowNull:false,
+  primaryKey: true,
+  autoIncrement: true
+ },
+
+ username: {
+  type:STRING,
+  allowNull: false,
+ },
+
+ email: {
+  type:STRING,
+  allowNull: false,
+ },
+ 
+ role: {
+  type:STRING,
+  allowNull: false,
+ },
+
+ password: {
+  type:STRING,
+  allowNull: false,
+ },
+
 }, {
   // ... Outras configs
   underscored: true,
