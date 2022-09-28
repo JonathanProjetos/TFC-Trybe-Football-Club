@@ -13,7 +13,7 @@ class User extends Model {
 
 User.init({
   // ... Campos
- id: INTEGER, 
+ id: INTEGER,   
  username: STRING,
  email: STRING,
  role: STRING,

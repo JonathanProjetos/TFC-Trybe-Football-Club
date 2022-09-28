@@ -1,4 +1,5 @@
 import * as express from 'express';
+import 'express-async-errors';
 
 class App {
   public app: express.Express;
@@ -22,6 +23,16 @@ class App {
 
     this.app.use(express.json());
     this.app.use(accessControl);
+
+    this.app.use((
+      err: Error,
+      req: express.Request,
+      res: express.Response,
+      _next: express.NextFunction,
+    ) => {
+      const [code, message] = err.message.split('|');
+      return res.status(Number(code)).json({ message });
+    });
   }
 
   public start(PORT: string | number):void {
