@@ -1,7 +1,5 @@
-import { JwtPayload } from 'jsonwebtoken';
-
 interface ILoginEmail {
-  email:string | JwtPayload
+  email:string
 }
 
 export default ILoginEmail;

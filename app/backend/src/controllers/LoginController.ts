@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import LoginServices from '../services/LoginServices';
-import ILoginController from '../interfaces/ILoginController';
+import IController from '../interfaces/IController';
 
-class UserControllers implements ILoginController {
+class UserControllers implements IController {
   constructor(private service: LoginServices) { }
 
   LoginController = async (req: Request, res: Response): Promise<Response> => {

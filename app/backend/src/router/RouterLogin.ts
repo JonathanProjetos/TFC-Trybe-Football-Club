@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import UserServices from '../services/LoginServices';
+import LoginServices from '../services/LoginServices';
 import LoginController from '../controllers/LoginController';
 
 const loginRouter = Router();
-const service = new UserServices();
+const service = new LoginServices();
 const UserLogin = new LoginController(service);
 
 loginRouter.post('/', UserLogin.LoginController);
