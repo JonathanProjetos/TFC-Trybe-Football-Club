@@ -1,9 +1,10 @@
+import * as bcrypt from 'bcryptjs';
 import UserModel from '../database/models/UserModel';
 // import IUserModel from '../interfaces/IUserModel';
 import ILogin from '../interfaces/ILogin';
 import JWTCreate from '../middleware/Token';
-import * as bcrypt from 'bcryptjs';
 import JoiValid from '../middleware/JoiValidate';
+
 class UserServices {
   private db = UserModel;
 
@@ -13,17 +14,17 @@ class UserServices {
     const { email, password } = check;
 
     const users = await this.db.findOne({ where: { email }, raw: true });
-    console.log('services', users?.password);
+    console.log('services', users);
 
     if (!users) throw new Error('400|unregistered person');
 
-    if (!bcrypt.compareSync(users?.password, password)) {
+    if (!bcrypt.compareSync(password, users?.password)) {
       throw new Error('401|Incorrect email or password');
     }
-.
-    const generateToken = JWTCreate.generateToken(email, password);
+
+    const generateToken = JWTCreate.generateToken(email);
 
     return generateToken;
-  }
+  };
 }
 export default UserServices;

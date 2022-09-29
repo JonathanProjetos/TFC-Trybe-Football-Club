@@ -3,12 +3,12 @@ import 'dotenv/config';
 // import ITokenInterface from '../interfaces/IToken';
 
 // const { JWT_SECRET } = process.env;
-const secret = process.env.JWT_SECRET || 'jwt_secret' 
+const secret = process.env.JWT_SECRET || 'jwt_secret';
 
 const jwtCheckUser = {
 
-  generateToken: (email: string, password: string) => {
-    const token = sign({ email, password }, secret, {
+  generateToken: (email: string) => {
+    const token = sign({ email }, secret, {
       expiresIn: '1d',
       algorithm: 'HS256',
     });

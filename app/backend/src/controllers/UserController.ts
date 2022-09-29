@@ -9,9 +9,11 @@ class UserControllers implements ILoginController {
     const { email, password } = req.body;
 
     const result = await this.service.LoginService({ email, password });
-    if(!result) throw new Error('404|User not found')
-    return res.status(200).json({token:result});
-  }
+
+    if (!result) throw new Error('404|User not found');
+
+    return res.status(200).json({ token: result });
+  };
 }
 
 export default UserControllers;
