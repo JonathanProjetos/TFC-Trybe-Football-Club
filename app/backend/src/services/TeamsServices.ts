@@ -11,5 +11,13 @@ class TeamsServices {
 
     return teams;
   };
+
+  GetByIdTeamServices = async (id:number):Promise<Teams> => {
+    const result = await this.db.findOne({ where: { id }, raw: true });
+
+    if (!result) throw new Error('401|No Teams');
+
+    return result;
+  };
 }
 export default TeamsServices;

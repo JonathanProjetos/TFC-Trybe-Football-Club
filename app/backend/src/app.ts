@@ -2,6 +2,7 @@ import * as express from 'express';
 import 'express-async-errors';
 import loginRouter from './router/RouterLogin';
 import userRouter from './router/RouterUser';
+import teamRouter from './router/RouterTeam';
 
 class App {
   public app: express.Express;
@@ -15,6 +16,7 @@ class App {
     this.app.get('/', (req, res) => res.json({ ok: true }));
     this.app.use('/', loginRouter);
     this.app.use('/', userRouter);
+    this.app.use('/', teamRouter);
 
     this.app.use((
       err: Error,
