@@ -1,7 +1,7 @@
 import * as Joi from 'joi';
 import ILogin from '../interfaces/ILogin';
 
-const MESSAGE = 'Incorrect email or password';
+const MESSAGE = 'All fields must be filled';
 
 const validateLogin = (dados: ILogin): ILogin => {
   const user = Joi.object({
@@ -13,9 +13,9 @@ const validateLogin = (dados: ILogin): ILogin => {
     }),
 
     password: Joi.string().min(6).required().messages({
-      'any.required': '400|All fields must be filled',
+      'any.required': `400|${MESSAGE}`,
       'string.base': `400|${MESSAGE}`,
-      'string.empty': '401|Incorrect email or password',
+      'string.empty': `400|${MESSAGE}`,
     }),
   });
 
