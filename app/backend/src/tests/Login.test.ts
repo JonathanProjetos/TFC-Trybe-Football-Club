@@ -41,7 +41,25 @@ describe('Testando end-point Login', () => {
     expect(test.test(BodyLogin.email)).to.be.true;
   });
 
-  it('Seu sub-teste', () => {
-    expect(false).to.be.eq(true);
+  it('Testando Password', async () => {
+    chaiHttpResponse = await chai
+    .request(app)
+    .post('/login')
+    .send(BodyLogin)
+
+
+    expect(BodyLogin.password).to.exist;
+    expect(BodyLogin.email.length > 6).to.be.true;
+  });
+
+
+  it('Testando o retorno em caso de sucesso', async () => {
+    chaiHttpResponse = await chai
+    .request(app)
+    .post('/login')
+    .send(BodyLogin)
+
+    expect(chaiHttpResponse).to.have.status(200);
+    expect(chaiHttpResponse.body).to.have.property('token')
   });
 });
