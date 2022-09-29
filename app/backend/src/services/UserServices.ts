@@ -14,14 +14,13 @@ class UserServices {
 
     const users = await this.db.findOne({ where: { email }, raw: true });
     console.log('services', users?.password);
-    
 
     if (!users) throw new Error('400|unregistered person');
 
-    if (!bcrypt.compareSync(password, users?.password)) {
+    if (!bcrypt.compareSync(users?.password, password)) {
       throw new Error('401|Incorrect email or password');
     }
-
+.
     const generateToken = JWTCreate.generateToken(email, password);
 
     return generateToken;

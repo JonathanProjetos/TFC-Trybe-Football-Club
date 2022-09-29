@@ -6,12 +6,14 @@ const validateLogin = (dados: ILogin): ILogin => {
     email: Joi.string().required().email().messages({
       'any.required': '400|All fields must be filled',
       'string.base': '400|email must be the type String',
-      'string.email': '401|Incorrect email or password'
+      'string.email': '401|Incorrect email or password',
+      'string.empty': '401|Incorrect email or password',
     }),
 
-    password: Joi.string().required().messages({
+    password: Joi.string().min(6).required().messages({
       'any.required': '400|All fields must be filled',
       'string.base': '400|password must be the type string',
+      'string.empty': '401|Incorrect email or password',
     }),
   });
 
