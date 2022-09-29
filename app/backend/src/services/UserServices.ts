@@ -1,30 +1,16 @@
-import * as bcrypt from 'bcryptjs';
 import User from '../database/models/UserModel';
-// import IUserModel from '../interfaces/IUserModel';
-import ILogin from '../interfaces/ILogin';
-import JWTCreate from '../middleware/Token';
-import JoiValid from '../middleware/JoiValidate';
+import IRole from '../interfaces/IRole';
 
 class UserServices {
   private db = User;
 
-  LoginService = async (body: ILogin): Promise<string> => {
-    const check = JoiValid(body);
-
-    const { email, password } = check;
-
+  UserService = async (email:string): Promise<IRole> => {
     const users = await this.db.findOne({ where: { email }, raw: true });
     console.log('services', users);
 
     if (!users) throw new Error('401|Incorrect email or password');
 
-    if (!bcrypt.compareSync(password, users?.password)) {
-      throw new Error('401|Incorrect email or password');
-    }
-
-    const generateToken = JWTCreate.generateToken(email);
-
-    return generateToken;
+    return { role: users.role };
   };
 }
 export default UserServices;
