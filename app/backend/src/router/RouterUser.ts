@@ -7,6 +7,6 @@ const userRouter = Router();
 const service = new UserServices();
 const User = new UserController(service);
 
-userRouter.get('/', validToken.Token, User.UserController);
+userRouter.get('/login/validate', validToken.Token, User.UserController);
 
 export default userRouter;

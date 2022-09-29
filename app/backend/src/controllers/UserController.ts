@@ -8,7 +8,7 @@ class UserControllers implements IController {
 
   UserController = async (req: Request, res: Response): Promise<Response> => {
     const { email } = (req as IGetUserAuthInfoRequest).user;
-
+    console.log(email);
     const result = await this.service.UserService(email);
 
     if (!result) throw new Error('404|User not found');
