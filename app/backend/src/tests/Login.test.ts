@@ -18,11 +18,7 @@ describe('Testando end-point Login', () => {
   let chaiHttpResponse: Response;
 
   before(async () => {
-    sinon
-      .stub(User, "findOne")
-      .resolves({
-        ...ObjectUser
-      } as User);
+    sinon.stub(User, "findOne").resolves({...ObjectUser} as User);
   });
 
   after(()=>{
@@ -49,7 +45,7 @@ describe('Testando end-point Login', () => {
 
 
     expect(BodyLogin.password).to.exist;
-    expect(BodyLogin.email.length > 6).to.be.true;
+    expect(BodyLogin.password.length > 6).to.be.true;
   });
 
 
@@ -59,7 +55,7 @@ describe('Testando end-point Login', () => {
     .post('/login')
     .send(BodyLogin)
 
-    expect(chaiHttpResponse).to.have.status(200);
+    expect(chaiHttpResponse.status).to.equals(200);
     expect(chaiHttpResponse.body).to.have.property('token')
   });
 });

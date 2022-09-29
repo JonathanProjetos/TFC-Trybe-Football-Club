@@ -1,7 +1,7 @@
 const ObjectUser = {
   id: 1,
   username: 'Admin',
-  email: 'admin@admin.com',
+  email: 'test@test.com',
   role: 'admin',
   password: '$2a$08$xi.Hxk1czAO0nZR..B393u10aED0RQ1N3PAEXQ7HxtLjKPEZBu.PW'
 }
@@ -9,7 +9,7 @@ const ObjectUser = {
 
 const BodyLogin = {
   email: 'test@test.com',
-  password: '163465487'
+  password: 'secret_admin'
 }
 
 export {ObjectUser, BodyLogin};
