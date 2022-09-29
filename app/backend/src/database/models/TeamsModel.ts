@@ -5,7 +5,7 @@ import db from '.';
 class Team extends Model {
   // public <campo>!: <tipo>;
   id!: number;
-  teamName!:string;
+  teamName!: string;
 }
 
 Team.init({
@@ -26,7 +26,7 @@ Team.init({
   // ... Outras configs
   underscored: true,
   sequelize: db,
-  modelName: 'teams',
+  // modelName: 'teams',
   timestamps: false,
 });
 
