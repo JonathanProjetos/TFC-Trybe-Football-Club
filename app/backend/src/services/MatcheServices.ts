@@ -37,5 +37,9 @@ class MatcheServices {
 
     return result as Matche;
   };
+
+  MatchServiceUpdateInProgress = async (id:number): Promise<void> => {
+    await this.db.update<Matche>({ inProgress: false }, { where: { id } });
+  };
 }
 export default MatcheServices;

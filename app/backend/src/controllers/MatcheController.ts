@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import MatcheServices from '../services/MatcheServices';
 import IController from '../interfaces/IController';
-import IGetUserAuthInfoRequest from '../interfaces/IGetUserAuthInfoRequest';
 
 class MatcheControllers implements IController {
   constructor(private service: MatcheServices) { }
