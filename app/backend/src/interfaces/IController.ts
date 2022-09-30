@@ -5,5 +5,6 @@ interface IController {
   UserController?(req:Request, res: Response): void;
   TeamController?(req:Request, res: Response): void;
   GetByIdTeamController?(req:Request, res: Response):void
+  MatcheController?(req:Request, res: Response): void;
 }
 export default IController;
