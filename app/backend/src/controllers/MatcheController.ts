@@ -17,11 +17,18 @@ class MatcheControllers implements IController {
     const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = req.body;
 
     const result = await this.service.MatcheServiceCreate({
-      homeTeam, awayTeam, homeTeamGoals, awayTeamGoals });
+      homeTeam, awayTeam, homeTeamGoals, awayTeamGoals,
+    });
 
     if (!result) throw new Error('404|Matche not found');
 
     return res.status(201).json(result);
+  };
+
+  MatchControllerUpdateInProgress = async (req: Request, res: Response): Promise<Response> => {
+    const { id } = req.params;
+    await this.service.MatchServiceUpdateInProgress(Number(id));
+    return res.status(201).json({ message: 'Finished' });
   };
 }
 

@@ -9,6 +9,6 @@ const Matche = new MetcheController(service);
 
 matcheRouter.get('/matches', Matche.MatcheControllerGetAll);
 matcheRouter.post('/matches', validToken.Token, Matche.MatcheControllerCreate);
-// teamRouter.get('/teams/:id', Matche.MatcheController);
+matcheRouter.patch('/matches/:id/finish', validToken.Token, Matche.MatchControllerUpdateInProgress);
 
 export default matcheRouter;
