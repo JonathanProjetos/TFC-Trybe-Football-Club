@@ -29,9 +29,9 @@ class MatcheServices {
   };
 
   MatcheServiceCreate = async (body: IMatcherBody, email: string): Promise<Matche> => {
-    const { nomeTeam, awayTeam, nomeTeamGoals, awayTeamGoals } = validateMatches(body);
+    const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = validateMatches(body);
 
-    await this.db.create({ nomeTeam, awayTeam, nomeTeamGoals, awayTeamGoals, inProgress: true });
+    await this.db.create({ homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress: true });
     const result = await this.db.findOne({ where: { email } });
     return result as Matche;
   };
