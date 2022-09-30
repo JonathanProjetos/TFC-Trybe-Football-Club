@@ -32,6 +32,10 @@ class MatcheServices {
   MatcheServiceCreate = async (body: IMatcherBody): Promise<Matche> => {
     const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = validateMatches(body);
 
+    if (homeTeam === awayTeam) {
+      throw new Error('401|It is not possible to create a match with two equal teams');
+    }
+
     const result = await this.db.create({
       homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress: true });
 
@@ -39,7 +43,7 @@ class MatcheServices {
   };
 
   MatchServiceUpdateInProgress = async (id:number): Promise<void> => {
-    await this.db.update<Matche>({ inProgress: false }, { where: { id } });
+    await this.db.update({ inProgress: false }, { where: { id } });
   };
 }
 export default MatcheServices;

@@ -28,7 +28,7 @@ class MatcheControllers implements IController {
   MatchControllerUpdateInProgress = async (req: Request, res: Response): Promise<Response> => {
     const { id } = req.params;
     await this.service.MatchServiceUpdateInProgress(Number(id));
-    return res.status(201).json({ message: 'Finished' });
+    return res.status(200).json({ message: 'Finished' });
   };
 }
 
