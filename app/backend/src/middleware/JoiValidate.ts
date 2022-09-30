@@ -1,5 +1,5 @@
 import * as Joi from 'joi';
-import IMatcherBody from 'src/interfaces/IMatcherBody';
+import IMatcherBody from '../interfaces/IMatcherBody';
 import ILogin from '../interfaces/ILogin';
 
 const MESSAGE = 'All fields must be filled';
@@ -58,6 +58,6 @@ const validateMatches = (dados:IMatcherBody) => {
     throw error;
   }
   return value;
-}
+};
 
-export { validateMatches, validateLogin};
+export { validateMatches, validateLogin };
