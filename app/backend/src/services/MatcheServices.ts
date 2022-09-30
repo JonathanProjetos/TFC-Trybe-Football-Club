@@ -35,14 +35,18 @@ class MatcheServices {
     if (homeTeam === awayTeam) {
       throw new Error('401|It is not possible to create a match with two equal teams');
     }
+    const checkTeam = await Team.findOne({ where: { id: homeTeam } });
+
+    if (!checkTeam) throw new Error('404|There is no team with such id!');
 
     const result = await this.db.create({
-      homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress: true });
+      homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress: true,
+    });
 
     return result as Matche;
   };
 
-  MatchServiceUpdateInProgress = async (id:number): Promise<void> => {
+  MatchServiceUpdateInProgress = async (id: number): Promise<void> => {
     await this.db.update({ inProgress: false }, { where: { id } });
   };
 }
