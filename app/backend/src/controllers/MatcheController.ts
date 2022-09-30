@@ -30,6 +30,15 @@ class MatcheControllers implements IController {
     await this.service.MatchServiceUpdateInProgress(Number(id));
     return res.status(200).json({ message: 'Finished' });
   };
+
+  MatchControllerUpdateTeamGoals = async (req: Request, res: Response): Promise<Response> => {
+    const { id } = req.params;
+    const { homeTeamGoals, awayTeamGoals } = req.body;
+
+    await this.service.MatchServiceUpdateTeamGoals({ homeTeamGoals, awayTeamGoals }, Number(id));
+
+    return res.status(200).json({ message: 'Partida atualizada' });
+  };
 }
 
 export default MatcheControllers;
