@@ -17,10 +17,8 @@ class MatcheControllers implements IController {
   MatcheControllerCreate = async (req: Request, res: Response): Promise<Response> => {
     const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = req.body;
 
-    const { email } = (req as IGetUserAuthInfoRequest).user;
-
     const result = await this.service.MatcheServiceCreate({
-      homeTeam, awayTeam, homeTeamGoals, awayTeamGoals }, email);
+      homeTeam, awayTeam, homeTeamGoals, awayTeamGoals });
 
     if (!result) throw new Error('404|Matche not found');
 

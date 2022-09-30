@@ -1,5 +1,6 @@
 import IMatcherBody from '../interfaces/IMatcherBody';
 import Matche from '../database/models/Matches';
+// import User from '../database/models/UserModel';
 import Team from '../database/models/TeamsModel';
 import { validateMatches } from '../middleware/JoiValidate';
 
@@ -28,11 +29,12 @@ class MatcheServices {
     return matche;
   };
 
-  MatcheServiceCreate = async (body: IMatcherBody, email: string): Promise<Matche> => {
+  MatcheServiceCreate = async (body: IMatcherBody): Promise<Matche> => {
     const { homeTeam, awayTeam, homeTeamGoals, awayTeamGoals } = validateMatches(body);
 
-    await this.db.create({ homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress: true });
-    const result = await this.db.findOne({ where: { email } });
+    const result = await this.db.create({
+      homeTeam, awayTeam, homeTeamGoals, awayTeamGoals, inProgress: true });
+
     return result as Matche;
   };
 }

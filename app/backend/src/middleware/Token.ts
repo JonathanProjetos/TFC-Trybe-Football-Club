@@ -23,7 +23,7 @@ const jwtCheckUser = {
       return payload as ILoginEmail;
     } catch (error) {
       console.log(error);
-      throw new Error('401|Invalid token');
+      throw new Error('401|Token must be a valid token');
     }
   },
 };

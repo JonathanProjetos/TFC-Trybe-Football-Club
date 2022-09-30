@@ -26,6 +26,7 @@ class App {
       res: express.Response,
       _next: express.NextFunction,
     ) => {
+      console.error(err);
       const [code, message] = err.message.split('|');
       return res.status(Number(code)).json({ message });
     });
