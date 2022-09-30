@@ -3,13 +3,13 @@ import User from '../database/models/UserModel';
 // import IUserModel from '../interfaces/IUserModel';
 import ILogin from '../interfaces/ILogin';
 import JWTCreate from '../middleware/Token';
-import JoiValid from '../middleware/JoiValidate';
+import { validateLogin } from '../middleware/JoiValidate';
 
 class LoginServices {
   private db = User;
 
   LoginService = async (body: ILogin): Promise<string> => {
-    const check = JoiValid(body);
+    const check = validateLogin(body);
 
     const { email, password } = check;
 

@@ -1,4 +1,5 @@
 import * as Joi from 'joi';
+import IMatcherBody from 'src/interfaces/IMatcherBody';
 import ILogin from '../interfaces/ILogin';
 
 const MESSAGE = 'All fields must be filled';
@@ -31,4 +32,32 @@ const validateLogin = (dados: ILogin): ILogin => {
   return value;
 };
 
-export default validateLogin;
+const obejectMatche = Joi.object({
+  homeTeam: Joi.number().required().messages({
+    'any.required': '400|homeTeam is required',
+  }),
+  awayTeam: Joi.number().required().messages({
+    'any.required': '400|awayTeam is required',
+  }),
+  homeTeamGoals: Joi.number().required().messages({
+    'any.required': '400|homeTeamGoals is required',
+  }),
+  awayTeamGoals: Joi.number().required().messages({
+    'any.required': '400|awayTeamGoals is required',
+  }),
+});
+
+const validateMatches = (dados:IMatcherBody) => {
+  const object = obejectMatche;
+
+  const { error, value } = object.validate(dados);
+
+  if (error) {
+    console.log(error);
+
+    throw error;
+  }
+  return value;
+}
+
+export { validateMatches, validateLogin};

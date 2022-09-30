@@ -5,8 +5,8 @@ import IController from '../interfaces/IController';
 class MatcheControllers implements IController {
   constructor(private service: MatcheServices) { }
 
-  MatcheController = async (req: Request, res: Response): Promise<Response> => {
-    const result = await this.service.MatcheService();
+  MatcheControllerGetAll = async (req: Request, res: Response): Promise<Response> => {
+    const result = await this.service.MatcheServiceGetAll();
 
     if (!result) throw new Error('404|Team not found');
 
