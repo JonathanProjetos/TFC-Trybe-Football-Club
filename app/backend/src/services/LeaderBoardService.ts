@@ -1,7 +1,7 @@
 import Team from '../database/models/TeamsModel';
 import ILeaderBoard from '../interfaces/ILeaderBoard';
 
-class LeaderBoardHomeServices {
+class LeaderBoardServices {
   private db = Team;
 
   LeaderBoardHome = async (): Promise<ILeaderBoard[]> => {
@@ -23,4 +23,4 @@ class LeaderBoardHomeServices {
     return ObjectLeaderBoard as ILeaderBoard[];
   };
 }
-export default LeaderBoardHomeServices;
+export default LeaderBoardServices;

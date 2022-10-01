@@ -8,5 +8,6 @@ interface IController {
   MatcheControllerGetAll?(req:Request, res: Response): void;
   MatchControllerUpdateInProgress?(req:Request, res: Response): void;
   MatchControllerUpdateTeamGoals?(req:Request, res: Response): void;
+  LeaderBoardHome?(req:Request, res: Response): void
 }
 export default IController;
