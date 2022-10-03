@@ -1,23 +1,39 @@
 import ILeaderBoard from '../interfaces/ILeaderBoard';
 import QueryMatchres from '../helpers/LeaderBoardAway/QueryMatchers';
+import TotalPointsAway from '../helpers/LeaderBoardAway/TotalPointsAway';
+import TotalJogosAway from '../helpers/LeaderBoardAway/TotalGamesAway';
+import TotalVictoryAway from '../helpers/LeaderBoardAway/TotalVictoryAway';
+import TotalDrawsAway from '../helpers/LeaderBoardAway/TotalDrawsAway';
+import TotalLossesAway from '../helpers/LeaderBoardAway/TotalLossesAway';
+import GoalsFavorAway from '../helpers/LeaderBoardAway/GoalsFavorAway';
+import GoalsOwnAway from '../helpers/LeaderBoardAway/GoalsOwnAway';
+import GoalsBalanceAway from '../helpers/LeaderBoardAway/GoalsBalanceAway';
+import EfficiencyAway from '../helpers/LeaderBoardAway/EfficiencyAway';
+import ILeaderBoardGoalsAways from '../interfaces/ILeaderBoardGoalsAway';
+import OrderDataAway from '../helpers/LeaderBoardAway/OrderDataAway';
 
 class LeaderBoardService {
   LeaderBoardAway = async ():Promise<ILeaderBoard[]> => {
-    const team = await QueryMatchres();
+    const teamAway = await QueryMatchres();
 
-    const ObjectLeaderBoardAway = team.map((data) => ({
+    const ObjectLeaderBoardAway = teamAway.map((data) => ({
       name: data.teamName,
-      totalPoints: TotalPointsAway(data as ILeaderBoardGoals),
-      totalGames: TotalJogosAway(data as ILeaderBoardGoals),
-      totalVictories: TotalVictoryAway(data as ILeaderBoardGoals),
-      totalDraws: TotalDrawsAway(data as ILeaderBoardGoals),
-      totalLosses: TotalLossesAway(data as ILeaderBoardGoals),
-      goalsFavor: GoalsFavorAway(data as ILeaderBoardGoals),
-      goalsOwn: GoalsOwnAway(data as ILeaderBoardGoals),
-      goalsBalance: GoalsBalanceAway(data as ILeaderBoardGoals),
-      efficiency: EfficiencyAway(data as ILeaderBoardGoals),
+      totalPoints: TotalPointsAway(data as unknown as ILeaderBoardGoalsAways),
+      totalGames: TotalJogosAway(data as unknown as ILeaderBoardGoalsAways),
+      totalVictories: TotalVictoryAway(data as unknown as ILeaderBoardGoalsAways),
+      totalDraws: TotalDrawsAway(data as unknown as ILeaderBoardGoalsAways),
+      totalLosses: TotalLossesAway(data as unknown as ILeaderBoardGoalsAways),
+      goalsFavor: GoalsFavorAway(data as unknown as ILeaderBoardGoalsAways),
+      goalsOwn: GoalsOwnAway(data as unknown as ILeaderBoardGoalsAways),
+      goalsBalance: GoalsBalanceAway(data as unknown as ILeaderBoardGoalsAways),
+      efficiency: EfficiencyAway(data as unknown as ILeaderBoardGoalsAways),
     }));
-    return team as [];
+
+    const dataResult = ObjectLeaderBoardAway;
+
+    const result = OrderDataAway(dataResult as ILeaderBoard[]);
+
+    return result as ILeaderBoard[];
   };
 }
 

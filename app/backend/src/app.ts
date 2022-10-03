@@ -5,6 +5,7 @@ import userRouter from './router/RouterUser';
 import teamRouter from './router/RouterTeam';
 import matcheRouter from './router/RouterMatche';
 import leaderBoardRouter from './router/RouterLeaderBoard';
+import leaderBoardRouterAway from './router/RouterLeaderBoardAway';
 
 class App {
   public app: express.Express;
@@ -14,13 +15,13 @@ class App {
 
     this.config();
 
-    // Não remover essa rota
     this.app.get('/', (req, res) => res.json({ ok: true }));
     this.app.use('/', loginRouter);
     this.app.use('/', userRouter);
     this.app.use('/', teamRouter);
     this.app.use('/', matcheRouter);
     this.app.use('/', leaderBoardRouter);
+    this.app.use('/', leaderBoardRouterAway);
 
     this.app.use((
       err: Error,
@@ -28,7 +29,6 @@ class App {
       res: express.Response,
       _next: express.NextFunction,
     ) => {
-      console.error(err);
       const [code, message] = err.message.split('|');
       return res.status(Number(code)).json({ message });
     });
