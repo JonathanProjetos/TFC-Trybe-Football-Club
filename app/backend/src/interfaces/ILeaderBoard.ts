@@ -1,6 +1,7 @@
 interface ILeaderBoard {
+
   name: string,
-  totalPoints: number,
+  totalPoints: number
   totalGames: number,
   totalVictories: number,
   totalDraws: number,

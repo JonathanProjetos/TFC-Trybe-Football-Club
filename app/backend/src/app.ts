@@ -4,6 +4,7 @@ import loginRouter from './router/RouterLogin';
 import userRouter from './router/RouterUser';
 import teamRouter from './router/RouterTeam';
 import matcheRouter from './router/RouterMatche';
+import leaderBoardRouter from './router/RouterLeaderBoard';
 
 class App {
   public app: express.Express;
@@ -19,6 +20,7 @@ class App {
     this.app.use('/', userRouter);
     this.app.use('/', teamRouter);
     this.app.use('/', matcheRouter);
+    this.app.use('/', leaderBoardRouter);
 
     this.app.use((
       err: Error,
