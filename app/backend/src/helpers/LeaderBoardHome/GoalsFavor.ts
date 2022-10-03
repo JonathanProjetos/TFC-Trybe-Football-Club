@@ -1,4 +1,4 @@
-import { Goals, ILeaderBoardGoals } from '../interfaces/ILeaderBoardGoals';
+import { Goals, ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoals';
 
 const GoalsFavor = (data:ILeaderBoardGoals) => {
   let total = 0;

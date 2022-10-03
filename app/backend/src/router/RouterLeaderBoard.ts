@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import LeaderBoardServices from '../services/LeaderBoardService';
-import LeaderBoardControllers from '../controllers/LeaderBoardController';
+import LeaderBoardServices from '../services/LeaderBoardHomeService';
+import LeaderBoardControllers from '../controllers/LeaderBoardHomeController';
 
 const leaderBoardRouter = Router();
 const service = new LeaderBoardServices();

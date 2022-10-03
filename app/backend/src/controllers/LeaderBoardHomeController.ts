@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import IController from '../interfaces/IController';
-import LeaderBoardServices from '../services/LeaderBoardService';
+import LeaderBoardServices from '../services/LeaderBoardHomeService';
 
 class LeaderBoardController implements IController {
   constructor(private services: LeaderBoardServices) { }

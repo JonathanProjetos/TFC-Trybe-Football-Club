@@ -1,6 +1,6 @@
 import TotalPoints from './TotalPoints';
 import TotalJogos from './TotalGames';
-import { ILeaderBoardGoals } from '../interfaces/ILeaderBoardGoals';
+import { ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoals';
 
 const Efficiency = (data:ILeaderBoardGoals) => {
   const MutiGamesForThere = TotalJogos(data as ILeaderBoardGoals) * 3;

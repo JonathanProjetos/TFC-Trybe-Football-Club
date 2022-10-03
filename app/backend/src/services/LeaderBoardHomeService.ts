@@ -1,21 +1,18 @@
-import Team from '../database/models/TeamsModel';
 import ILeaderBoard from '../interfaces/ILeaderBoard';
-import TotalPoints from '../helper/TotalPoints';
-import TotalJogos from '../helper/TotalGames';
-import TotalVictory from '../helper/TotalVictory';
-import TotalDraws from '../helper/TotalDraws';
-import TotalLosses from '../helper/TotalLosses';
-import GoalsFavor from '../helper/GoalsFavor';
-import GoalsOwn from '../helper/GoalsOwn';
-import GoalsBalance from '../helper/GoalsBalance';
-import Efficiency from '../helper/Efficiency';
-import QueryMatchres from '../helper/QueryMachters';
+import TotalPoints from '../helpers/LeaderBoardHome/TotalPoints';
+import TotalJogos from '../helpers/LeaderBoardHome/TotalGames';
+import TotalVictory from '../helpers/LeaderBoardHome/TotalVictory';
+import TotalDraws from '../helpers/LeaderBoardHome/TotalDraws';
+import TotalLosses from '../helpers/LeaderBoardHome/TotalLosses';
+import GoalsFavor from '../helpers/LeaderBoardHome/GoalsFavor';
+import GoalsOwn from '../helpers/LeaderBoardHome/GoalsOwn';
+import GoalsBalance from '../helpers/LeaderBoardHome/GoalsBalance';
+import Efficiency from '../helpers/LeaderBoardHome/Efficiency';
+import QueryMatchres from '../helpers/LeaderBoardHome/QueryMachters';
 import { ILeaderBoardGoals } from '../interfaces/ILeaderBoardGoals';
-import OrderData from '../helper/OrderData';
+import OrderData from '../helpers/LeaderBoardHome/OrderData';
 
 class LeaderBoardServices {
-  private db = Team;
-
   LeaderBoardHome = async (): Promise<ILeaderBoard[]> => {
     const team = await QueryMatchres();
 

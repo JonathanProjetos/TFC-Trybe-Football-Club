@@ -1,4 +1,4 @@
-import ILeaderBoard from '../interfaces/ILeaderBoard';
+import ILeaderBoard from '../../interfaces/ILeaderBoard';
 
 const OrderData = (data:ILeaderBoard[]):ILeaderBoard[] => {
   const order = data.sort((a, b) => {

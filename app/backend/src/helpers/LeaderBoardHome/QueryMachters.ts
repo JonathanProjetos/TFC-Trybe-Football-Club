@@ -1,6 +1,6 @@
-import Team from '../database/models/TeamsModel';
-import Matche from '../database/models/Matches';
-import { ILeaderBoardGoals } from '../interfaces/ILeaderBoardGoals';
+import Team from '../../database/models/TeamsModel';
+import Matche from '../../database/models/Matches';
+import { ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoals';
 
 const QueryMatchres = async () => {
   const data = await Team.findAll({
