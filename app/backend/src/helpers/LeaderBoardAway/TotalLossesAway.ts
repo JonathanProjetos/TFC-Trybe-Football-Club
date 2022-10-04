@@ -1,4 +1,4 @@
-import { Goals } from '../../interfaces/ILeaderBoardGoals';
+import { Goals } from '../../interfaces/ILeaderBoardGoalsHome';
 import ILeaderBoardGoalsAway from '../../interfaces/ILeaderBoardGoalsAway';
 
 const TotalLossesAway = (data: ILeaderBoardGoalsAway) => {

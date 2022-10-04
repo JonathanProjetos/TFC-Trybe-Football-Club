@@ -2,7 +2,7 @@ import routerLogin from './RouterLogin';
 import routeUser from './RouterUser';
 import routeMatche from './RouterMatche';
 import routeTeam from './RouterTeam';
-import routLeaderBoardHome from './RouterLeaderBoard';
+import routLeaderBoardHome from './RouterLeaderBoardHome';
 import routeLeaderBoardAway from './RouterLeaderBoardAway';
 
 const route = {

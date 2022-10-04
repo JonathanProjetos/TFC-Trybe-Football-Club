@@ -1,18 +1,18 @@
 import Team from '../../database/models/TeamsModel';
 import Matche from '../../database/models/Matches';
-import { ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoals';
+import { ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoalsHome';
 
-const QueryMatchres = async () => {
+const QueryForMatchres = async () => {
   const data = await Team.findAll({
     include: [{
       model: Matche,
-      as: 'teamHome',
+      as: 'teamAway',
       where: { inProgress: false },
-      attributes: ['homeTeamGoals', 'awayTeamGoals'],
+      attributes: ['awayTeamGoals', 'homeTeamGoals'],
     }],
   });
 
   return data as unknown as ILeaderBoardGoals[];
 };
 
-export default QueryMatchres;
+export default QueryForMatchres;

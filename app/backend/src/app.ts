@@ -4,7 +4,7 @@ import loginRouter from './router/RouterLogin';
 import userRouter from './router/RouterUser';
 import teamRouter from './router/RouterTeam';
 import matcheRouter from './router/RouterMatche';
-import leaderBoardRouter from './router/RouterLeaderBoard';
+import leaderBoardRouter from './router/RouterLeaderBoardHome';
 import leaderBoardRouterAway from './router/RouterLeaderBoardAway';
 
 class App {
@@ -38,8 +38,7 @@ class App {
     const accessControl: express.RequestHandler = (_req, res, next) => {
       res.header('Access-Control-Allow-Origin', '*');
       res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,OPTIONS,PUT,PATCH');
-      res.header('Access-Control-Allow-Headers', '*');
-      next();
+      res.header('Access-Control-Allow-Headers', '*'); next();
     };
 
     this.app.use(express.json());

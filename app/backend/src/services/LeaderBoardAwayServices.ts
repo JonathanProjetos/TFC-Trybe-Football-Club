@@ -1,5 +1,5 @@
 import ILeaderBoard from '../interfaces/ILeaderBoard';
-import QueryMatchres from '../helpers/LeaderBoardAway/QueryMatchers';
+import QueryMatchres from '../helpers/LeaderBoardAway/QueryMatchersAway';
 import TotalPointsAway from '../helpers/LeaderBoardAway/TotalPointsAway';
 import TotalJogosAway from '../helpers/LeaderBoardAway/TotalGamesAway';
 import TotalVictoryAway from '../helpers/LeaderBoardAway/TotalVictoryAway';

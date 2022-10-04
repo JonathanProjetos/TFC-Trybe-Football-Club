@@ -10,5 +10,6 @@ interface IController {
   MatchControllerUpdateTeamGoals?(req:Request, res: Response): void;
   LeaderBoardHome?(req:Request, res: Response): void
   LeaderBoardAway?(req:Request, res: Response): void
+  LeaderBoard?(req:Request, res: Response): void
 }
 export default IController;

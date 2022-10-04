@@ -1,4 +1,4 @@
-import { ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoals';
+import { ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoalsHome';
 
 const TotalJogos = (data:ILeaderBoardGoals) => {
   const total = data.teamHome.length;

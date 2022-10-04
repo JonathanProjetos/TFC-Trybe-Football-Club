@@ -1,5 +1,5 @@
 import ILeaderBoardGoalsAway from '../../interfaces/ILeaderBoardGoalsAway';
-import { Goals } from '../../interfaces/ILeaderBoardGoals';
+import { Goals } from '../../interfaces/ILeaderBoardGoalsHome';
 
 const TotalPointsAway = (data: ILeaderBoardGoalsAway) => {
   let totalAway = 0;

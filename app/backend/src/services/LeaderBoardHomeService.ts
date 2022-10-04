@@ -1,16 +1,16 @@
 import ILeaderBoard from '../interfaces/ILeaderBoard';
-import TotalPoints from '../helpers/LeaderBoardHome/TotalPoints';
-import TotalJogos from '../helpers/LeaderBoardHome/TotalGames';
-import TotalVictory from '../helpers/LeaderBoardHome/TotalVictory';
-import TotalDraws from '../helpers/LeaderBoardHome/TotalDraws';
-import TotalLosses from '../helpers/LeaderBoardHome/TotalLosses';
-import GoalsFavor from '../helpers/LeaderBoardHome/GoalsFavor';
-import GoalsOwn from '../helpers/LeaderBoardHome/GoalsOwn';
-import GoalsBalance from '../helpers/LeaderBoardHome/GoalsBalance';
-import Efficiency from '../helpers/LeaderBoardHome/Efficiency';
-import QueryMatchres from '../helpers/LeaderBoardHome/QueryMachters';
-import { ILeaderBoardGoals } from '../interfaces/ILeaderBoardGoals';
-import OrderData from '../helpers/LeaderBoardHome/OrderData';
+import TotalPoints from '../helpers/LeaderBoardHome/TotalPointsHome';
+import TotalJogos from '../helpers/LeaderBoardHome/TotalGamesHome';
+import TotalVictory from '../helpers/LeaderBoardHome/TotalVictoryHome';
+import TotalDraws from '../helpers/LeaderBoardHome/TotalDrawsHome';
+import TotalLosses from '../helpers/LeaderBoardHome/TotalLossesHome';
+import GoalsFavor from '../helpers/LeaderBoardHome/GoalsFavorHome';
+import GoalsOwn from '../helpers/LeaderBoardHome/GoalsOwnHome';
+import GoalsBalance from '../helpers/LeaderBoardHome/GoalsBalanceHome';
+import Efficiency from '../helpers/LeaderBoardHome/EfficiencyHome';
+import QueryMatchres from '../helpers/LeaderBoardHome/QueryMachtersHome';
+import { ILeaderBoardGoals } from '../interfaces/ILeaderBoardGoalsHome';
+import OrderData from '../helpers/LeaderBoardHome/OrderDataHome';
 
 class LeaderBoardServices {
   LeaderBoardHome = async (): Promise<ILeaderBoard[]> => {

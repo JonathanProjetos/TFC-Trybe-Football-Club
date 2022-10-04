@@ -1,4 +1,4 @@
-import { ILeaderBoardGoals, Goals } from '../../interfaces/ILeaderBoardGoals';
+import { ILeaderBoardGoals, Goals } from '../../interfaces/ILeaderBoardGoalsHome';
 
 const GoalsBalance = (data: ILeaderBoardGoals) => {
   let totalHome = 0;
