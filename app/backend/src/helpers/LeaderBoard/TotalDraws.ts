@@ -8,8 +8,8 @@ const TotalDraws = (data: ILeaderBoardAll) => {
     if (goals.awayTeamGoals === goals.homeTeamGoals) total += 1;
   });
 
-  data.teamAway.forEach((goals: Goals) => {
-    if (goals.awayTeamGoals === goals.homeTeamGoals) total += 1;
+  data.teamHome.forEach((goals: Goals) => {
+    if (goals.homeTeamGoals === goals.awayTeamGoals) total += 1;
   });
 
   return total;

@@ -9,8 +9,9 @@ import TotalDraws from '../helpers/LeaderBoard/TotalDraws';
 import GoalsFavor from '../helpers/LeaderBoard/GoalFavor';
 import GoalsOwn from '../helpers/LeaderBoard/GoalsOwn';
 import GoalsBalance from '../helpers/LeaderBoard/GoalsBalances';
-import Efficiency from '../helpers/LeaderBoardHome/EfficiencyHome';
+import Efficiency from '../helpers/LeaderBoard/Efficiency';
 import { ILeaderBoardGoalsHome } from '../interfaces/ILeaderBoardGoalsHome';
+import OrderData from '../helpers/LeaderBoardHome/OrderDataHome';
 
 class LeaderBoardService {
   LeaderBoard = async ():Promise<ILeaderBoard[]> => {
@@ -29,7 +30,11 @@ class LeaderBoardService {
       efficiency: Efficiency(data as unknown as ILeaderBoardGoalsHome),
     }));
 
-    return ObjectLeaderBoard as ILeaderBoard[];
+    const dataResult = ObjectLeaderBoard;
+
+    const result = OrderData(dataResult as ILeaderBoard[]);
+
+    return result as ILeaderBoard[];
   };
 }
 
