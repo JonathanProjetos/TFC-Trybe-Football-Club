@@ -9,7 +9,7 @@ import GoalsOwn from '../helpers/LeaderBoardHome/GoalsOwnHome';
 import GoalsBalance from '../helpers/LeaderBoardHome/GoalsBalanceHome';
 import Efficiency from '../helpers/LeaderBoardHome/EfficiencyHome';
 import QueryMatchres from '../helpers/LeaderBoardHome/QueryMachtersHome';
-import { ILeaderBoardGoals } from '../interfaces/ILeaderBoardGoalsHome';
+import { ILeaderBoardGoalsHome } from '../interfaces/ILeaderBoardGoalsHome';
 import OrderData from '../helpers/LeaderBoardHome/OrderDataHome';
 
 class LeaderBoardServices {
@@ -18,15 +18,15 @@ class LeaderBoardServices {
 
     const ObjectLeaderBoard = team.map((data) => ({
       name: data.teamName,
-      totalPoints: TotalPoints(data as ILeaderBoardGoals),
-      totalGames: TotalJogos(data as ILeaderBoardGoals),
-      totalVictories: TotalVictory(data as ILeaderBoardGoals),
-      totalDraws: TotalDraws(data as ILeaderBoardGoals),
-      totalLosses: TotalLosses(data as ILeaderBoardGoals),
-      goalsFavor: GoalsFavor(data as ILeaderBoardGoals),
-      goalsOwn: GoalsOwn(data as ILeaderBoardGoals),
-      goalsBalance: GoalsBalance(data as ILeaderBoardGoals),
-      efficiency: Efficiency(data as ILeaderBoardGoals),
+      totalPoints: TotalPoints(data as ILeaderBoardGoalsHome),
+      totalGames: TotalJogos(data as ILeaderBoardGoalsHome),
+      totalVictories: TotalVictory(data as ILeaderBoardGoalsHome),
+      totalDraws: TotalDraws(data as ILeaderBoardGoalsHome),
+      totalLosses: TotalLosses(data as ILeaderBoardGoalsHome),
+      goalsFavor: GoalsFavor(data as ILeaderBoardGoalsHome),
+      goalsOwn: GoalsOwn(data as ILeaderBoardGoalsHome),
+      goalsBalance: GoalsBalance(data as ILeaderBoardGoalsHome),
+      efficiency: Efficiency(data as ILeaderBoardGoalsHome),
     }));
 
     const dataResult = ObjectLeaderBoard;

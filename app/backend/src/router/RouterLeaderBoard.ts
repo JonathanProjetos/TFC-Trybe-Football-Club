@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import LeaderBoardServices from '../services/LeaderBoardHomeService';
-import LeaderBoardControllers from '../controllers/LeaderBoardHomeController';
+import LeaderBoardServices from '../services/LeaderBoardServices';
+import LeaderBoardControllers from '../controllers/LeaderBoardController';
 
 const leaderBoardRouter = Router();
 const service = new LeaderBoardServices();
 const controller = new LeaderBoardControllers(service);
 
-leaderBoardRouter.get('/leaderboard/home', controller.LeaderBoardHome);
+leaderBoardRouter.get('/leaderboard', controller.LeaderBoard);
 export default leaderBoardRouter;

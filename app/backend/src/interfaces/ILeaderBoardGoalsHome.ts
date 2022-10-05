@@ -3,10 +3,10 @@ interface Goals {
   awayTeamGoals: number
 }
 
-interface ILeaderBoardGoals {
+interface ILeaderBoardGoalsHome {
   id?: number
   teamName: string
   teamHome: []
 }
 
-export { Goals, ILeaderBoardGoals };
+export { Goals, ILeaderBoardGoalsHome };

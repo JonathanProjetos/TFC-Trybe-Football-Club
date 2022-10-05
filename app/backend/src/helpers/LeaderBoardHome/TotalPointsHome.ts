@@ -1,6 +1,6 @@
-import { Goals, ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoalsHome';
+import { Goals, ILeaderBoardGoalsHome } from '../../interfaces/ILeaderBoardGoalsHome';
 
-const TotalPoints = (data: ILeaderBoardGoals) => {
+const TotalPoints = (data: ILeaderBoardGoalsHome) => {
   let totalHome = 0;
 
   data.teamHome.forEach((goals: Goals) => {

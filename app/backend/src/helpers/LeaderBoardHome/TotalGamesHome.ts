@@ -1,6 +1,6 @@
-import { ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoalsHome';
+import { ILeaderBoardGoalsHome } from '../../interfaces/ILeaderBoardGoalsHome';
 
-const TotalJogos = (data:ILeaderBoardGoals) => {
+const TotalJogos = (data:ILeaderBoardGoalsHome) => {
   const total = data.teamHome.length;
   return total;
 };

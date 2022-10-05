@@ -1,6 +1,7 @@
-import { ILeaderBoardGoalsHome, Goals } from '../../interfaces/ILeaderBoardGoalsHome';
+import { Goals } from '../../interfaces/ILeaderBoardGoalsHome';
+import ILeaderBoardAll from '../../interfaces/ILeaderBoardAll';
 
-const GoalsBalance = (data: ILeaderBoardGoalsHome) => {
+const GoalsBalance = (data: ILeaderBoardAll) => {
   let totalHome = 0;
   let totalAway = 0;
 

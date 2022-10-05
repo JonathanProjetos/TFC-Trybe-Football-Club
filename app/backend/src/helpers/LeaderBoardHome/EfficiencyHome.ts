@@ -1,10 +1,10 @@
 import TotalPoints from './TotalPointsHome';
 import TotalJogos from './TotalGamesHome';
-import { ILeaderBoardGoals } from '../../interfaces/ILeaderBoardGoalsHome';
+import { ILeaderBoardGoalsHome } from '../../interfaces/ILeaderBoardGoalsHome';
 
-const Efficiency = (data:ILeaderBoardGoals) => {
-  const MutiGamesForThere = TotalJogos(data as ILeaderBoardGoals) * 3;
-  const DivTotalPoints = TotalPoints(data as ILeaderBoardGoals) / MutiGamesForThere;
+const Efficiency = (data:ILeaderBoardGoalsHome) => {
+  const MutiGamesForThere = TotalJogos(data as ILeaderBoardGoalsHome) * 3;
+  const DivTotalPoints = TotalPoints(data as ILeaderBoardGoalsHome) / MutiGamesForThere;
   const total = DivTotalPoints * 100;
   return Number(total.toFixed(2));
 };
