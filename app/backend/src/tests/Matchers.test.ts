@@ -30,18 +30,19 @@ describe('Testando end-point Matches findAll', () => {
     chaiHttpResponse = await chai
       .request(app)
       .get('/matches')
-      .send()
+      .send(ObjectMatches)
 
       expect(chaiHttpResponse.status).to.equals(200);
-  });
-
-  it('Testando matches body', async () => {
-    chaiHttpResponse = await chai
+    });
+    
+    it('Testando matches body', async () => {
+      chaiHttpResponse = await chai
       .request(app)
       .get('/matches')
       .send()
-
+      
       expect(chaiHttpResponse.body).to.not.empty;
+      expect(chaiHttpResponse.body).to.be.deep.equals(ObjectMatches)
   });
 
 });

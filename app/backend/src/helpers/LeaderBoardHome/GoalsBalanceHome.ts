@@ -13,3 +13,4 @@ const GoalsBalance = (data: ILeaderBoardGoalsHome) => {
 };
 
 export default GoalsBalance;
+  
