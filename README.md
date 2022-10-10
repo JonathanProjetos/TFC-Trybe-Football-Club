@@ -1,16 +1,16 @@
-# 🚧 README em construção 🚧
+# Trybe Football Club
 
-<!-- Olá, Tryber!
+# Contexto
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+TFC é um site informativo sobre partidas e classificações de futebol! ⚽️. O objetivo deste desafio é desenvolver uma API utilizando modelagem de dados através do Sequelize para ser consumida pelo front que já está completamente implementado. O acesso aos end-points, segue os princípios REST. Para acessar alguns endereços vinculados a usuário é necessário fazer autenticação e quando autenticado a API responderá trazendo um token no corpo da requisição. O token deverá ser inserido no cabeçalho de cada requisição privada, com o intuito de autenticação.
 
-É essencial que você preencha esse documento por conta própria, ok?
+## preview
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+ ![Exemplo app front](assets/front-example.png)
 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
+## Importante:
 
--->
+- E aconselhável o uso de softwares de envio de requisições REST como:
+- [Insomia](https://insomnia.rest/)
+- [Postman](https://www.postman.com/)
+- [Httpie](https://httpie.io/)
