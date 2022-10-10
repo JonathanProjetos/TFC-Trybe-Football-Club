@@ -29,7 +29,7 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
 
 ## Detalhes da Rota
 
-#### Verbo Post : /login
+#### Verbo POST : /login
 
 ##### Esperado
  - O corpo da requisição deverá seguir o formato abaixo:
@@ -45,7 +45,7 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjU0NTI3MTg5fQ.XS_9AA82iNoiVaASi0NtJpqOQ_gHSHhxrpIdigiT-fc" 
 }
 ```
-### Verbo Get : /login/validate
+### Verbo GET : /login/validate
 
 ##### Esperado
 
@@ -54,7 +54,7 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
  ```json
   { "role": "admin" }
  ```
- ### Verbo Get : /teams
+### Verbo GET : /teams
 
 ##### Esperado
 
@@ -72,7 +72,7 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
    },
    ...
 ```
- ### Verbo Get : /teams/:id
+### Verbo GET : /teams/:id
 
 ##### Esperado
 
@@ -84,7 +84,7 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
      "teamName": "Avaí/Kindermann"
    }
 ```
- ### Verbo Get : /matches
+### Verbo GET : /matches
 
 ##### Esperado
 
@@ -108,7 +108,7 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
   },
   ...
 ```
- ### Verbo Post : /matches
+### Verbo POST : /matches
 
 ##### Esperado
 
@@ -123,3 +123,45 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
   "inProgress": true 
 }
 ```
+- A rota responde com um body contendo este formato e status http 201.
+
+```json
+{
+  "id": 1,
+  "homeTeam": 16,
+  "homeTeamGoals": 2,
+  "awayTeam": 8,
+  "awayTeamGoals": 2,
+  "inProgress": true,
+}
+```
+### Verbo PATCH : /matches/:id/finish
+
+##### Esperado
+
+ - A rota deve receber um id é responderá com um body neste formato.
+ 
+```json
+{ "message": "Finished" }
+```
+- objetivo deste end-point e atualizar o status da partida de "Em andamento" para "Finalizada".
+
+### Verbo PATCH : /matches/:id
+
+##### Esperado
+
+ - A rota deve receber um id é responderá com um body neste formato.
+ 
+```json
+{
+  "homeTeamGoals": 3,
+  "awayTeamGoals": 1
+}
+
+```
+- A rota responderá com este formato e status http 200.
+```json
+{ message: "artida atualizada"}
+```
+
+
