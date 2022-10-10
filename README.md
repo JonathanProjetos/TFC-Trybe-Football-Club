@@ -108,3 +108,18 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
   },
   ...
 ```
+ ### Verbo Post : /matches
+
+##### Esperado
+
+ - O corpo da requisição deverá seguir o formato abaixo.
+ 
+```json
+{
+  "homeTeam": 16,
+  "awayTeam": 8,
+  "homeTeamGoals": 2,
+  "awayTeamGoals": 2,
+  "inProgress": true 
+}
+```
