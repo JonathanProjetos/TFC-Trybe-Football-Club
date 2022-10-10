@@ -6,7 +6,7 @@ TFC é um site informativo sobre partidas e classificações de futebol! ⚽️.
 
 ## preview
 
- ![Exemplo app front](assets/front-example.png)
+ ![Exemplo app front](app/frontend/image/2022-10-10_10-14.png)
 
 ## Importante:
 
