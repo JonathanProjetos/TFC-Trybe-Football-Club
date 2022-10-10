@@ -35,7 +35,7 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
  - O corpo da requisição deverá seguir o formato abaixo:
  ```json
 {
-  "email": admin@admin.com
+  "email": "admin@admin.com"
   "password": "secret_admin"
 }
  ```
