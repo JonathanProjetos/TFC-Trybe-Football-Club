@@ -25,7 +25,7 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
 
 > Framework utilizado: Express.
 
-> Libs: nodemon, eslint, express-async-errors, dotenv, joi, jsonwebtoken, mysql2, sequelize-cli, cors, jest, mocha, chai, sinon.
+> Libs: nodemon, eslint, express-async-errors, dotenv, joi, jsonwebtoken, mysql2, sequelize-cli, cors, jest, mocha, chai, sinon, bycrptjs.
 
 ## Detalhes da Rota
 
