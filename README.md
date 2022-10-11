@@ -259,8 +259,40 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
     "efficiency": "66.67"
   },
 ```
+## Instalando Dependências
 
+## Docker
+```
+cd TFC-Trybe-Football-Club/app/backend
+npm install
+cd ..
+cd frontend
+npm install
+cd ..
+cd ..
+npm install
+npm run compose:up:dev
+docker logs --tail 1000 -f app_backend
+docker exec -it app_backend bash
+Se todos os passos forem feitos com sucesso o front também estará disponível.
+```
+## Sem o docker
+```
+cd TFC-Trybe-Football-Club/app/backend
+npm install
+cd ..
+cd frontend
+npm install
+cd ..
+cd ..
+npm install
+npm run compose:up:dev
+```
+## Test
+```bash
+cd TFC-Trybe-Football-Club/app/backend
+npm run test:coverage
+```
 
-
-
-
+## Aviso Importante 
+Caso queira roda a aplicação via docker deverá ter o docker instalado no dispositivo, caso não esteja instalado você pode encontra como instalar neste [link](https://docs.docker.com/engine/install/ubuntu/) site oficial
