@@ -292,6 +292,7 @@ npm run compose:up:dev
 ```bash
 cd TFC-Trybe-Football-Club/app/backend
 npm run test:coverage
+- Foi implementado test de integração que cobre 89% das linhas.
 ```
 
 ## Aviso Importante 
