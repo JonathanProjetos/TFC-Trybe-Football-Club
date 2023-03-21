@@ -266,6 +266,9 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
 cd TFC-Trybe-Football-Club/app
 npm run compose:up:dev
 docker logs --tail 1000 -f app_backend
+
+caso queira rodar comandos dentro do dcoker:
+
 docker exec -it app_backend bash
 Se todos os passos forem feitos com sucesso o front também estará disponível.
 ```
