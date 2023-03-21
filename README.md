@@ -263,14 +263,7 @@ TFC é um site informativo sobre partidas e classificações de times de futebol
 
 ## Docker
 ```
-cd TFC-Trybe-Football-Club/app/backend
-npm install
-cd ..
-cd frontend
-npm install
-cd ..
-cd ..
-npm install
+cd TFC-Trybe-Football-Club/app
 npm run compose:up:dev
 docker logs --tail 1000 -f app_backend
 docker exec -it app_backend bash
@@ -280,13 +273,15 @@ Se todos os passos forem feitos com sucesso o front também estará disponível.
 ```
 cd TFC-Trybe-Football-Club/app/backend
 npm install
-cd ..
-cd frontend
+npm run prestart
+
+abra outro terminal
+
+cd TFC-Trybe-Football-Club/app/frontend
 npm install
-cd ..
-cd ..
-npm install
-npm run compose:up:dev
+npm start
+
+será nescessario configura o arquivo database/config conforme a conexão com o seu mysql
 ```
 ## Test
 ```bash
